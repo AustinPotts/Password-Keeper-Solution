@@ -149,7 +149,7 @@ class PasswordController {
         
         //CRUD
         
-    @discardableResult func createPassword(with website: String, passwordString: String) -> Password {
+    func createPassword(with website: String, passwordString: String, context: NSManagedObjectContext) {
         let password = Password(website: website, passwordString: passwordString, context: CoreDataStack.share.mainContext)
     
         
@@ -157,7 +157,7 @@ class PasswordController {
         put(password: password)
         CoreDataStack.share.save()
         
-        return password
+    
     }
     
     

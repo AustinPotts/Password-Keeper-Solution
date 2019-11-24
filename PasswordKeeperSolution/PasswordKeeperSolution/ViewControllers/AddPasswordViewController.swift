@@ -37,7 +37,7 @@ class AddPasswordViewController: UIViewController {
         if let password = password{
             passwordController?.updatePassword(password: password, with: website, passwordString: passwordString)
         } else {
-            passwordController?.createPassword(with: website, passwordString: passwordString)
+            passwordController?.createPassword(with: website, passwordString: passwordString, context: CoreDataStack.share.mainContext)
         }
         navigationController?.popViewController(animated: true)
         
